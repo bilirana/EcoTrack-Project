@@ -82,13 +82,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="ActivityLog.xaml">
+	  <MauiXaml Update="Presentation\ActivityLog.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ImpactReportPage.xaml">
+	  <MauiXaml Update="Presentation\ImpactReportPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="TipsGoals.xaml">
+	  <MauiXaml Update="Presentation\TipsGoals.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

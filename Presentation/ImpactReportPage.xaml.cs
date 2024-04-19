@@ -1,3 +1,6 @@
+using EcoTrack_Project.Business;
+using EcoTrack_Project.Data;
+
 namespace EcoTrack_Project;
 
 public partial class ImpactReportPage : ContentPage

@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using EcoTrack_Project.Business;
 
-namespace EcoTrack_Project
+namespace EcoTrack_Project.Data
 {
     public static class DataStorage
     {
