@@ -12,8 +12,8 @@ namespace EcoTrack_Project.Business
         public int UserID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public List<Activity> Activities { get; set; } = new List<Activity>();
-        public List<Goal> Goals { get; set; } = new List<Goal>();
+        public List<Activity> Activities { get; set; } = new List<Activity>();  //creating list for activities
+        public List<Goal> Goals { get; set; } = new List<Goal>();   //creating list for goals
 
         // Add a new activity to the user's list of activities
         public void AddActivity(Activity activity)

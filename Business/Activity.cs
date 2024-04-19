@@ -9,11 +9,11 @@ namespace EcoTrack_Project.Business
     public class Activity
     {
         public int ActivityID { get; set; }
-        public string Type { get; set; } // e.g., Travel, Heating, Electricity use
+        public string Type { get; set; } // e.g., Type of activity
         public double CarbonFootprint { get; set; } // in kg of CO2
-        public DateTime Date { get; set; } // Date the activity was recorded
+        public DateTime Date { get; set; } // Date of activity
 
-        // Constructor to initialize a new activity
+        // Constructor 
         public Activity(string type, double carbonFootprint, DateTime date)
         {
             Type = type;
@@ -21,7 +21,7 @@ namespace EcoTrack_Project.Business
             Date = date;
         }
 
-        // Display text for CollectionView or other UI components
+        // Displaying text for CollectionView
         public string DisplayText => $"{Type} - {CarbonFootprint} kg CO2, Date: {Date.ToShortDateString()}";
     }
 }

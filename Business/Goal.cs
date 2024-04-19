@@ -14,7 +14,7 @@ namespace EcoTrack_Project.Business
 
         public string TargetReductionText => $"Target Reduction: {TargetReduction}%";
 
-        // Constructor to initialize a new goal with description and target
+        // Constructor 
         public Goal(string description, double targetReduction)
         {
             Description = description;
