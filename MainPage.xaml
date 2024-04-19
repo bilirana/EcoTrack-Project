@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoTrack_Project.MainPage"
+             Title="Dashboard">
+
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30">
+            <Label Text="Your Carbon Footprint Dashboard" FontSize="24"/>
+            <Label x:Name="totalCarbonFootprint" Text="Total Carbon Footprint: " FontSize="18"/>
+            <Label x:Name="recentActivities" Text="Recent Activities: " FontSize="18"/>
+            <ProgressBar x:Name="progressTowardsGoal" Progress="0.5"/>
+            <Button Text="Refresh" Clicked="OnRefreshClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
