@@ -66,6 +66,9 @@
 	  <MauiXaml Update="ActivityLog.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ImpactReportPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="TipsGoals.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

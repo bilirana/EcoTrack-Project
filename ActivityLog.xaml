@@ -8,7 +8,8 @@
         <Label Text="Log Your Activity" FontSize="24"/>
         <Entry x:Name="activityTypeEntry" Placeholder="Type of Activity"/>
         <Entry x:Name="carbonFootprintEntry" Placeholder="Estimated Carbon Footprint (kg CO2)"/>
-        <Button Text="Log Activity" Clicked="OnLogActivityClicked"/>
+        <DatePicker x:Name="activityDatePicker" Format="D"/>
+            <Button Text="Log Activity" Clicked="OnLogActivityClicked"/>
         <Button Text="Remove Selected Activity" Clicked="OnRemoveActivityClicked"/>
         <CollectionView x:Name="activitiesCollectionView" SelectionMode="Single">
             <CollectionView.ItemTemplate>

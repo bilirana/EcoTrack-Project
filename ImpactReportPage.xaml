@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoTrack_Project.ImpactReportPage"
+             Title="Impact Report">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30">
+            <Label Text="Select Start Date" FontSize="16"/>
+            <DatePicker x:Name="startDatePicker"/>
+
+            <Label Text="Select End Date" FontSize="16"/>
+            <DatePicker x:Name="endDatePicker"/>
+
+            <Button Text="Generate Report" Clicked="OnGenerateReportClicked"/>
+            <Label x:Name="totalFootprintLabel" Text="Total Carbon Footprint: " FontSize="18"/>
+            <Label x:Name="averageFootprintLabel" Text="Average Footprint: " FontSize="18"/>
+            <Label x:Name="highestImpactLabel" Text="Highest Impact Activity: " FontSize="18"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

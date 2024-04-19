@@ -11,26 +11,33 @@ public partial class ActivityLog : ContentPage
     {
         InitializeComponent();
         activitiesCollectionView.ItemsSource = activities;
+        activityDatePicker.Date = DateTime.Now;
+        activityDatePicker.MaximumDate = DateTime.Now;
     }
 
     private void OnLogActivityClicked(object sender, EventArgs e)
     {
-        try
+        var activityType = activityTypeEntry.Text;
+        if (string.IsNullOrWhiteSpace(activityType))
         {
-            var activityType = activityTypeEntry.Text;
-            var carbonFootprint = double.Parse(carbonFootprintEntry.Text); // Validate and parse footprint
-
-            var newActivity = new Activity(activityType, carbonFootprint);
-            activities.Add(newActivity);
-
-            DisplayAlert("Activity Logged", $"Your {activityType} activity with {carbonFootprint} kg CO2 has been recorded.", "OK");
-            activityTypeEntry.Text = ""; // Clear the input fields
-            carbonFootprintEntry.Text = "";
+            DisplayAlert("Input Error", "Please enter the type of activity.", "OK");
+            return;
         }
-        catch (Exception ex)
+
+        if (!double.TryParse(carbonFootprintEntry.Text, out double carbonFootprint) || carbonFootprint <= 0)
         {
-            DisplayAlert("Error", "Please enter valid data for the activity.", "OK");
+            DisplayAlert("Input Error", "Please enter a valid carbon footprint (positive number).", "OK");
+            return;
         }
+
+        var activityDate = activityDatePicker.Date;
+
+        var newActivity = new Activity(activityType, carbonFootprint, activityDate);
+        activities.Add(newActivity);
+
+        DisplayAlert("Activity Logged", $"Your {activityType} activity with {carbonFootprint} kg CO2 has been recorded on {activityDate.ToShortDateString()}.", "OK");
+        activityTypeEntry.Text = ""; // Clear the input fields
+        carbonFootprintEntry.Text = ""; // Clear the input fields
     }
 
     private void OnRemoveActivityClicked(object sender, EventArgs e)

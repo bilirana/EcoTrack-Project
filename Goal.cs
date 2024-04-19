@@ -12,6 +12,8 @@ namespace EcoTrack_Project
         public string Description { get; set; }
         public double TargetReduction { get; set; } // Target reduction in carbon footprint in percentage
 
+        public string TargetReductionText => $"Target Reduction: {TargetReduction}%";
+
         // Constructor to initialize a new goal with description and target
         public Goal(string description, double targetReduction)
         {

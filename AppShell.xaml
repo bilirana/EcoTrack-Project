@@ -11,5 +11,6 @@
     <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}" Title="Dashboard" Icon="icon_home.png"/>
     <ShellContent Route="ActivityLog" ContentTemplate="{DataTemplate local:ActivityLog}" Title="Log Activity" Icon="icon_log.png"/>
     <ShellContent Route="TipsGoals" ContentTemplate="{DataTemplate local:TipsGoals}" Title="Tips and Goals" Icon="icon_tips.png"/>
+    <ShellContent Route="ImpactReportPage" ContentTemplate="{DataTemplate local:ImpactReportPage}" Title="Environmental Impact"/>
     
 </Shell>
