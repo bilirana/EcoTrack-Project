@@ -57,6 +57,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\a1.jpg" />
+	  <MauiImage Remove="Resources\Images\a2.jpg" />
+	  <MauiImage Remove="Resources\Images\a3.jpg" />
+	  <MauiImage Remove="Resources\Images\a4.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Properties\launchSettings.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Include="Properties\launchSettings.json" />
+	  <MauiAsset Include="Resources\Images\a1.jpg" />
+	  <MauiAsset Include="Resources\Images\a2.jpg" />
+	  <MauiAsset Include="Resources\Images\a3.jpg" />
+	  <MauiAsset Include="Resources\Images\a4.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />

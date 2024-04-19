@@ -13,9 +13,18 @@ public partial class ActivityLog : ContentPage
         activitiesCollectionView.ItemsSource = activities;
         activityDatePicker.Date = DateTime.Now;
         activityDatePicker.MaximumDate = DateTime.Now;
+        LoadActivities();
+    }
+    private async void LoadActivities()
+    {
+        var loadedActivities = await DataStorage.LoadActivitiesAsync();
+        foreach (var activity in loadedActivities)
+        {
+            activities.Add(activity);
+        }
     }
 
-    private void OnLogActivityClicked(object sender, EventArgs e)
+    private async void OnLogActivityClicked(object sender, EventArgs e)
     {
         var activityType = activityTypeEntry.Text;
         if (string.IsNullOrWhiteSpace(activityType))
@@ -34,6 +43,7 @@ public partial class ActivityLog : ContentPage
 
         var newActivity = new Activity(activityType, carbonFootprint, activityDate);
         activities.Add(newActivity);
+        await DataStorage.SaveActivitiesAsync(new List<Activity>(activities));
 
         DisplayAlert("Activity Logged", $"Your {activityType} activity with {carbonFootprint} kg CO2 has been recorded on {activityDate.ToShortDateString()}.", "OK");
         activityTypeEntry.Text = ""; // Clear the input fields

@@ -10,11 +10,13 @@ public partial class ImpactReportPage : ContentPage
         activities = new List<Activity>(); // Ideally, load this from persistent storage.
     }
 
-    private void OnGenerateReportClicked(object sender, EventArgs e)
+    private async void OnGenerateReportClicked(object sender, EventArgs e)
     {
+        var activities = await DataStorage.LoadActivitiesAsync();
         var report = new EnvironmentalImpactReport(startDatePicker.Date, endDatePicker.Date, activities);
-        totalFootprintLabel.Text = "Total Carbon Footprint: " + report.TotalCarbonFootprint().ToString() + " kg CO2";
-        averageFootprintLabel.Text = "Average Footprint: " + report.AverageFootprint().ToString() + " kg CO2";
+
+        totalFootprintLabel.Text = "Total Carbon Footprint: " + report.TotalCarbonFootprint().ToString("N2") + " kg CO2";
+        averageFootprintLabel.Text = "Average Footprint: " + report.AverageFootprint().ToString("N2") + " kg CO2";
         highestImpactLabel.Text = "Highest Impact Activity: " + report.HighestImpactActivity();
     }
 }
