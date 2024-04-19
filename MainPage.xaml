@@ -11,7 +11,7 @@
             <Label x:Name="totalCarbonFootprint" Text="Total Carbon Footprint: " FontSize="18"/>
             <Label x:Name="recentActivities" Text="Recent Activities: " FontSize="18"/>
             <ProgressBar x:Name="progressTowardsGoal" Progress="0.5"/>
-            <Button Text="Refresh" Clicked="OnRefreshClicked"/>
+            <Button Text="Refresh"/>
         </VerticalStackLayout>
     </ScrollView>
 

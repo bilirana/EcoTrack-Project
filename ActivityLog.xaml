@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoTrack_Project.ActivityLog"
+             Title="Log Activity">
+    <VerticalStackLayout Spacing="25" Padding="30">
+        <Label Text="Log Your Activity" FontSize="24"/>
+        <Entry x:Name="activityTypeEntry" Placeholder="Type of Activity"/>
+        <Entry x:Name="carbonFootprintEntry" Placeholder="Estimated Carbon Footprint (kg CO2)"/>
+        <Button Text="Log Activity" Clicked="OnLogActivityClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
