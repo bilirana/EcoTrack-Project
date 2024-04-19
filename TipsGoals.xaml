@@ -8,8 +8,20 @@
             <Label Text="Tips to Reduce Your Carbon Footprint" FontSize="24"/>
             <Label Text="1. Use public transportation or carpool when possible." FontSize="18"/>
             <Label Text="2. Switch to renewable energy sources for your home." FontSize="18"/>
-            <Entry x:Name="goalDescriptionEntry" Placeholder="Set a new reduction goal"/>
+            <Entry x:Name="goalDescriptionEntry" Placeholder="Describe your goal"/>
+            <Entry x:Name="targetReductionEntry" Placeholder="Target reduction in %"/>
             <Button Text="Set Goal" Clicked="OnSetGoalClicked"/>
+            <Button Text="Remove Selected Goal" Clicked="OnRemoveGoalClicked"/>
+            <CollectionView x:Name="goalsCollectionView" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Description}" FontSize="18"/>
+                            <Label Text="{Binding TargetReductionText}" FontSize="16" TextColor="Gray"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

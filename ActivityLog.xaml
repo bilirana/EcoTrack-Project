@@ -3,10 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoTrack_Project.ActivityLog"
              Title="Log Activity">
+
     <VerticalStackLayout Spacing="25" Padding="30">
         <Label Text="Log Your Activity" FontSize="24"/>
         <Entry x:Name="activityTypeEntry" Placeholder="Type of Activity"/>
         <Entry x:Name="carbonFootprintEntry" Placeholder="Estimated Carbon Footprint (kg CO2)"/>
         <Button Text="Log Activity" Clicked="OnLogActivityClicked"/>
+        <Button Text="Remove Selected Activity" Clicked="OnRemoveActivityClicked"/>
+        <CollectionView x:Name="activitiesCollectionView" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding DisplayText}" FontSize="18"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Label x:Name="activitiesDisplay" FontSize="18"/>
     </VerticalStackLayout>
 </ContentPage>
